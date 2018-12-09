@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "902544108625",
+    "firebase_url": "https://flashcardapp-ca2d8.firebaseio.com",
+    "project_id": "flashcardapp-ca2d8",
+    "storage_bucket": "flashcardapp-ca2d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902544108625:android:4a6323262d5e6680",
+        "android_client_info": {
+          "package_name": "com.example.cheyenne.flashcardapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902544108625-ve7a0p1o6cuf0kds4dhvvtcguh2lad5c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cheyenne.flashcardapp",
+            "certificate_hash": "4d69c735dd1f156c9eac7806abefc9d71048ce12"
+          }
+        },
+        {
+          "client_id": "902544108625-doi4bpp7uuckej88qq3ohk9kiiu3ipmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpSj3ErEGgMOl8fbpa54YQZgACCHFz2UE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902544108625-doi4bpp7uuckej88qq3ohk9kiiu3ipmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

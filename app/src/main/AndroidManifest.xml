@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".addTopic"></activity>
+        <activity android:name=".addTopic" />
+        <activity android:name=".addCard" />
+        <activity android:name=".actualMain"></activity>
     </application>
 
 </manifest>
