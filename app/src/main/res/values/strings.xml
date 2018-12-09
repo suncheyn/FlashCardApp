@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FlashCardApp</string>
     <string name="create_topic">CREATE TOPIC</string>
+    <string name="new_topic_text_for_button">New Topic</string>
+    <string name="name_your_topic_here_hint_text">Name your topic here</string>
+    <string name="new_card_button_text">New Card</string>
 </resources>

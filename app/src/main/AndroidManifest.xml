@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".addTopic" />
         <activity android:name=".addCard" />
-        <activity android:name=".actualMain"></activity>
+        <activity android:name=".actualMain" />
+        <activity android:name=".cardDisplay"></activity>
     </application>
 
 </manifest>
