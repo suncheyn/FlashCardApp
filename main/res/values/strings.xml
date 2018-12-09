@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FlashCardApp</string>
+    <string name="create_topic">CREATE TOPIC</string>
+</resources>

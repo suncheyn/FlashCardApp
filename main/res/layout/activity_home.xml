@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home"
+    tools:context=".welcome"
     tools:layout_editor_absoluteY="81dp">
 
     <Button
@@ -32,7 +32,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="155dp"
         android:fontFamily="sans-serif-condensed"
-        android:text='Welcome! With our Flash Card Application, you can create folders to store your flashcards for different subjects. Begin by firsting creating a "New Topic".'
+        android:text='Welcome! With our Flash Card Application, you can create folders to store your flashcards for different subjects. Begin by first creating a "New Topic".'
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
