@@ -3,7 +3,6 @@ package com.example.cheyenne.flashcardapp;
 public class Topics {
     private String title;
     private String id;
-    //private ArrayList or
 
     public Topics()
     {
