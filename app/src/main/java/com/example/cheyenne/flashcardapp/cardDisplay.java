@@ -8,21 +8,38 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import java.util.List;
+
 public class cardDisplay extends AppCompatActivity {
 
     //just for testing purposes:
-    String items[] = new String [] {"What is Java?","Question 2","Question 3","How long can a a question be?"};
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
+
+    private ChildEventListener childEventListener;
+
+    private ArrayAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_display);
 
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("FlashCards");
+
+        String [] cardList;
+
         //this line associates our ListView widget to the listView object in this file
         ListView listView = (ListView) findViewById(R.id.cardList);
         //...just for testing purposes
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items);
-        listView.setAdapter(adapter);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -31,6 +48,33 @@ public class cardDisplay extends AppCompatActivity {
                 //startActivity(new Intent(this, GroupCardsActivity.class));
             }
         });
+        childEventListener = new ChildEventListener() {
+            @Override
+            // Method is run when any new node is added to the database, and once
+            // for every existing node when the activity is loaded
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                arrayAdapter.add(dataSnapshot.getValue(FlashCard.class));
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+        myRef.addChildEventListener(childEventListener);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        listView.setAdapter(arrayAdapter);
     }
 
     public void addCardGo(View view){
