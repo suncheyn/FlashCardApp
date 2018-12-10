@@ -13,7 +13,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.util.List;
 
 public class cardDisplay extends AppCompatActivity {
 
@@ -38,9 +37,6 @@ public class cardDisplay extends AppCompatActivity {
 
         //this line associates our ListView widget to the listView object in this file
         ListView listView = (ListView) findViewById(R.id.cardList);
-        //...just for testing purposes
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override

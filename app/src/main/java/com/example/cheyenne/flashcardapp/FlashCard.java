@@ -38,6 +38,6 @@ public class FlashCard {
 
     public String toString()
     {
-        return question + ": " + answer;
+        return question + ": \n" + answer;
     }
 }

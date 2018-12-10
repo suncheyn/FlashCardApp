@@ -38,12 +38,12 @@ public class addTopic extends AppCompatActivity {
                 String key = myRef.push().getKey(); //warning: may be null
                 t = new Topics(topicName, key);
                 myRef.child(key).setValue(t);
-                openAddCard();
+                openAddCard(v);
             }
         });
         topicField.setText("");
     }
-    public void openAddCard()
+    public void openAddCard(View view)
     {
         Intent intent = new Intent(this, addCard.class);
         intent.putExtra("Topic", t.getTitle());

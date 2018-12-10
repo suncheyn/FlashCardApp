@@ -25,4 +25,9 @@ public class Topics {
         return id;
     }
 
+    public String toString()
+    {
+        return title + "  hello";
+    }
+
 }

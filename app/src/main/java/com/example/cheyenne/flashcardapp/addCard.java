@@ -17,6 +17,7 @@ public class addCard extends AppCompatActivity {
     private EditText answerField;
     private String answerText;
     private String topic;
+    private FlashCard card;
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -43,7 +44,7 @@ public class addCard extends AppCompatActivity {
                 String key = myRef.push().getKey(); //warning: may be null
                 FlashCard c = new FlashCard(topic, questionText, answerText);
                 myRef.child(key).setValue(c);
-                cardDisplayGo();
+                cardDisplayGo(v);
             }
         });
 
@@ -52,7 +53,11 @@ public class addCard extends AppCompatActivity {
 
     }
 
-    public void cardDisplayGo() {
+    public void cardDisplayGo(View view) {
+        questionField.setText("");
+        answerField.setText("");
         startActivity(new Intent(this, cardDisplay.class));
     }
+
+
 }
