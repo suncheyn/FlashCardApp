@@ -35,7 +35,7 @@ public class addTopic extends AppCompatActivity {
                 topicName = topicField.getText().toString();
                 String key = myRef.push().getKey(); //warning: may be null
                 Topics t = new Topics(topicName, key);
-                myRef.child(key).setValue(t.getTitle());
+                myRef.child(key).setValue(t);
                 openAddCard();
             }
         });
