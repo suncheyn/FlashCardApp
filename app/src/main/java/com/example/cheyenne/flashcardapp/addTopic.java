@@ -11,9 +11,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class addTopic extends AppCompatActivity {
-    //private Button button;
-    //FirebaseDatabase database;
-    //DatabaseReference myRef;
+    private Button button;
+    private EditText topicField;
+    private String topicName;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
 
 
 
@@ -22,24 +24,27 @@ public class addTopic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_topic);
 
-        /*database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Topics");
 
         button = findViewById(R.id.topicFinish);
+        topicField = findViewById(R.id.newTopic);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "ICS 45J";
-                String key = myRef.push().getKey();
-                myRef.child(key).setValue(title);
-                //openAddCard(view);
+                topicName = topicField.getText().toString();
+                String key = myRef.push().getKey(); //warning: may be null
+                Topics t = new Topics(topicName, key);
+                myRef.child(key).setValue(t.getTitle());
+                openAddCard();
             }
         });
-        */
+        topicField.setText("");
     }
-    public void openAddCard(View view)
+    public void openAddCard()
     {
-        startActivity(new Intent(this, addCard.class));
+        Intent intent = new Intent(this, addCard.class);
+        startActivity(intent);
     }
 
 }
