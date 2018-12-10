@@ -3,25 +3,25 @@ package com.example.cheyenne.flashcardapp;
 import com.example.cheyenne.flashcardapp.Topics;
 
 public class FlashCard {
-    private Topics topic;
+    private String topic;
     private String question;
     private String answer;
 
     public FlashCard()
     {
-        topic = new Topics();
+        topic = "NA";
         question = "NA";
         answer = "NA";
     }
 
-    public FlashCard(Topics t, String q, String a)
+    public FlashCard(String t, String q, String a)
     {
         topic = t;
         question = q;
         answer = a;
     }
 
-    public Topics getTopic()
+    public String getTopic()
     {
         return topic;
     }

@@ -16,6 +16,7 @@ public class addCard extends AppCompatActivity {
     private String questionText;
     private EditText answerField;
     private String answerText;
+    private String topic;
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -23,6 +24,9 @@ public class addCard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
+
+        Bundle bundle = getIntent().getExtras();
+        topic = bundle.getString("Topic");
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("FlashCards");
@@ -37,7 +41,9 @@ public class addCard extends AppCompatActivity {
                 questionText = questionField.getText().toString();
                 answerText = answerField.getText().toString();
                 String key = myRef.push().getKey(); //warning: may be null
-
+                FlashCard c = new FlashCard(topic, questionText, answerText);
+                myRef.child(key).setValue(c);
+                cardDisplayGo();
 
             }
         });
@@ -47,7 +53,7 @@ public class addCard extends AppCompatActivity {
 
     }
 
-    public void cardDisplayGo(View view) {
+    public void cardDisplayGo() {
         startActivity(new Intent(this, cardDisplay.class));
     }
 }
