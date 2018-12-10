@@ -45,6 +45,7 @@ public class addCard extends AppCompatActivity {
                 myRef.child(key).setValue(c);
                 cardDisplayGo();
 
+
             }
         });
 
