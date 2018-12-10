@@ -44,8 +44,6 @@ public class addCard extends AppCompatActivity {
                 FlashCard c = new FlashCard(topic, questionText, answerText);
                 myRef.child(key).setValue(c);
                 cardDisplayGo();
-
-
             }
         });
 
