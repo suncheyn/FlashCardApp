@@ -37,7 +37,8 @@ public class cardDisplay extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //startActivity(new Intent(this, GroupCardsActivity.class));
+
+                openCardQA(view);
             }
         });
         childEventListener = new ChildEventListener() {
@@ -75,5 +76,11 @@ public class cardDisplay extends AppCompatActivity {
 
     public void actualMainGo(View view){
         startActivity(new Intent(this, actualMain.class));
+    }
+
+    public void openCardQA(View view)
+    {
+        Intent intent = new Intent(this, cardQA.class);
+        startActivity(intent);
     }
 }
