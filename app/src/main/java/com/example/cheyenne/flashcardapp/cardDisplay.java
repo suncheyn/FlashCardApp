@@ -13,7 +13,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.util.List;
 
 public class cardDisplay extends AppCompatActivity {
 
@@ -22,7 +21,6 @@ public class cardDisplay extends AppCompatActivity {
     private DatabaseReference myRef;
 
     private ChildEventListener childEventListener;
-
     private ArrayAdapter arrayAdapter;
 
     @Override
@@ -30,17 +28,11 @@ public class cardDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_display);
 
-
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("FlashCards");
 
-        String [] cardList;
-
         //this line associates our ListView widget to the listView object in this file
         ListView listView = (ListView) findViewById(R.id.cardList);
-        //...just for testing purposes
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
