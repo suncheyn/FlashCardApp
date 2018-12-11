@@ -27,7 +27,7 @@ public class Topics {
 
     public String toString()
     {
-        return title + "  hello";
+        return title;
     }
 
 }

@@ -15,12 +15,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class actualMain extends AppCompatActivity {
-    //just for testing purposes
+
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
     private ChildEventListener childEventListener;
-
     private ArrayAdapter arrayAdapter;
 
     @Override

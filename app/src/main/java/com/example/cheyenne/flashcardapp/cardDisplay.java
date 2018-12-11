@@ -21,7 +21,6 @@ public class cardDisplay extends AppCompatActivity {
     private DatabaseReference myRef;
 
     private ChildEventListener childEventListener;
-
     private ArrayAdapter arrayAdapter;
 
     @Override
@@ -29,11 +28,8 @@ public class cardDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_display);
 
-
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("FlashCards");
-
-        String [] cardList;
 
         //this line associates our ListView widget to the listView object in this file
         ListView listView = (ListView) findViewById(R.id.cardList);
